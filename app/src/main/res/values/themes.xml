@@ -3,7 +3,7 @@
 
     <style name="Theme.WalmartHealthCareAssignment" parent="Theme.Material3.DayNight.NoActionBar" >
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#2D9CDB</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryContainer">#E3F2FD</item>
         <item name="colorSecondary">#27AE60</item>
         <item name="colorSecondaryContainer">#C8E6C9</item>
