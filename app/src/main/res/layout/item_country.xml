@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="country"
+            type="com.dotech.walmarthealthcareassignment.domain.models.Country" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:strokeWidth="0dp"
+        app:cardElevation="@dimen/cardEva"
+        android:layout_margin="@dimen/mainCardMargin"
+        app:cardCornerRadius="@dimen/mainCardRadius"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHighest"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/rec_item_padding">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/itm_tv_cname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{country.name}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Country Name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/itm_tv_cregion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`, `+country.region}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/itm_tv_cname"
+                app:layout_constraintStart_toEndOf="@+id/itm_tv_cname"
+                app:layout_constraintTop_toTopOf="@+id/itm_tv_cname"
+                tools:text=", region" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/itm_tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{country.code}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/itm_tv_cregion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="code" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/itm_tv_ccapital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{country.capital}"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/design_default_color_on_secondary"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/itm_tv_cname"
+                app:layout_constraintStart_toStartOf="@+id/itm_tv_cname"
+                app:layout_constraintTop_toBottomOf="@+id/itm_tv_cname"
+                tools:text="Capital" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

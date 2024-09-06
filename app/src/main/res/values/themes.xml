@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.WalmartHealthCareAssignment" parent="Theme.Material3.DayNight.NoActionBar" >
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#2D9CDB</item>
+        <item name="colorPrimaryContainer">#E3F2FD</item>
+        <item name="colorSecondary">#27AE60</item>
+        <item name="colorSecondaryContainer">#C8E6C9</item>
+
+        <!-- Background and surface colors -->
+        <item name="backgroundColor">#F5F5F5</item>
+        <item name="colorSurface">#FFFFFF</item>
+
+        <!-- Text colors -->
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorOnBackground">#333333</item>
+        <item name="colorOnSurface">#333333</item>
+
+        <!-- Error Colors -->
+        <item name="colorError">#D32F2F</item>
+        <item name="colorOnError">#FFFFFF</item>
+
+        <!-- Customize the corner radius and elevation for Material Design 3. -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.LargeComponent</item>
+
+        <!-- Elevation overlays for better Material 3 looks. -->
+        <item name="elevationOverlayEnabled">true</item>
+
+        <item name="windowActionModeOverlay">true</item>
+<!--        <item name="actionModeCloseDrawable">@drawable/ic_close_24dp</item>-->
+        <item name="actionBarTheme">@style/ThemeOverlay.Material3.Dark.ActionBar</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WalmartHealthCareAssignment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_country">Search Country</string>
+    <string name="country_list">Country List</string>
+    <string name="search_for_a_country">Search for a country...</string>
+    <string name="search">Search</string>
+    <string name="home">home</string>
+    <string name="exit">Exit</string>
+</resources>
