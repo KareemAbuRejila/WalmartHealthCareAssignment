@@ -14,4 +14,13 @@ data class Country(
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "capital") val capital: String,
     @ColumnInfo(name = "region") val region: String
-): Parcelable
+) : Parcelable {
+    fun compare(country: Country) = when {
+        this == country -> true
+        code != country.code -> false
+        name != country.name -> false
+        capital != country.capital -> false
+        region != country.region -> false
+        else -> true
+    }
+}

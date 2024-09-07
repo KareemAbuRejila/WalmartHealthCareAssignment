@@ -4,12 +4,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.dotech.walmarthealthcareassignment.R
 import com.dotech.walmarthealthcareassignment.app.network.NetworkConnectionMonitor
-import com.dotech.walmarthealthcareassignment.app.ui.adapters.ListAdapter
-import com.dotech.walmarthealthcareassignment.app.ui.adapters.view_holders.ViewHolders
+import com.dotech.walmarthealthcareassignment.app.ui.adapters.CountriesListAdapter
 import com.dotech.walmarthealthcareassignment.databinding.ActivityHomeBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,7 +17,7 @@ class HomeActivity : ComponentActivity(){
     private lateinit var networkMonitor: NetworkConnectionMonitor
     private val homeViewModel by viewModels<HomeViewModel>()
     private lateinit var  binding: ActivityHomeBinding
-    private lateinit var countriesAdapter: ListAdapter
+    private lateinit var countriesAdapter: CountriesListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +31,9 @@ class HomeActivity : ComponentActivity(){
     private fun init() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         networkMonitor = NetworkConnectionMonitor(this)
-        countriesAdapter = ListAdapter()
-        countriesAdapter.TYPE=ViewHolders.COUNTRY_ITEM.type
+        countriesAdapter = CountriesListAdapter {
+            Snackbar.make(binding.root, it.name, Snackbar.LENGTH_SHORT).show()
+        }
         binding.countriesAdapter = countriesAdapter
     }
 
@@ -47,7 +47,7 @@ class HomeActivity : ComponentActivity(){
     override fun onStart() {
         super.onStart()
         homeViewModel.countries.observe(this) {
-            countriesAdapter.updateCountries(it)
+            countriesAdapter.submitList(it)
         }
         homeViewModel.isLoading.observe(this) {
             binding.loading=it
@@ -55,6 +55,7 @@ class HomeActivity : ComponentActivity(){
         }
         homeViewModel.error.observe(this) {
             binding.msg = it
+            if (it.isNotBlank())Snackbar.make(binding.root, it, Snackbar.LENGTH_SHORT).show()
         }
         homeViewModel.networkStatusLiveData.observe(this){
             if (it) homeViewModel.fetchAllCountries()

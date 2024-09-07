@@ -15,7 +15,7 @@
 
         <variable
             name="countriesAdapter"
-            type="com.dotech.walmarthealthcareassignment.app.ui.adapters.ListAdapter" />
+            type="com.dotech.walmarthealthcareassignment.app.ui.adapters.CountriesListAdapter" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

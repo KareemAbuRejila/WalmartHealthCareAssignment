@@ -9,7 +9,7 @@
         <item name="colorSecondaryContainer">#C8E6C9</item>
 
         <!-- Background and surface colors -->
-        <item name="backgroundColor">#F5F5F5</item>
+        <item name="backgroundColor">#F5F5F5</item>1
         <item name="colorSurface">#FFFFFF</item>
 
         <!-- Text colors -->
