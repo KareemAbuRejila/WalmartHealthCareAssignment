@@ -7,16 +7,16 @@ import com.dotech.walmarthealthcareassignment.data.models.RemoteResponse
 import com.dotech.walmarthealthcareassignment.data.remote.apis.CountriesApi
 import com.dotech.walmarthealthcareassignment.domain.models.Country
 import com.dotech.walmarthealthcareassignment.domain.repositories.CountriesRepo
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.withContext
 import java.net.SocketTimeoutException
 import javax.inject.Inject
 
 class CountriesRepoImpl @Inject constructor(
-    private val api: CountriesApi, private val countriesLocalRepo: CountriesLocalRepo
+    private val api: CountriesApi,
+    private val countriesLocalRepo: CountriesLocalRepo,
+    private val context:Context
 ) : CountriesRepo {
 
-    override suspend fun getAllCountries(context: Context): RemoteResponse<List<Country>?> {
+    override suspend fun getAllCountries(): RemoteResponse<List<Country>?> {
             try {
                 // Check if countries are available in the local database
                 countriesLocalRepo.getAll().also {
@@ -24,7 +24,7 @@ class CountriesRepoImpl @Inject constructor(
                     return if ( it.isNotEmpty())
                         RemoteResponse.Success(it)
                     else
-                        getFromRemote(context)
+                        return getFromRemote(context)
                 }
             } catch (e: Exception) {
                 return RemoteResponse.Error(e.message ?: "Exception")

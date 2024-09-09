@@ -6,5 +6,5 @@ import com.dotech.walmarthealthcareassignment.domain.models.Country
 
 interface CountriesRepo {
 
-    suspend fun getAllCountries(context: Context): RemoteResponse<List<Country>?>
+    suspend fun getAllCountries(): RemoteResponse<List<Country>?>
 }

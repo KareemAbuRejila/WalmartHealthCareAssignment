@@ -3,10 +3,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
 
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
     id("kotlin-parcelize")
-    kotlin("kapt")
     alias(libs.plugins.compose.compiler)
+    id("kotlin-kapt")
 }
 
 android {
@@ -59,6 +58,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
 dependencies {
@@ -71,18 +71,18 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
     implementation(project(":views"))
     //CustomViews
 
     //Icons
     implementation(libs.androidx.material3.icons)
+
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
     //Coroutines
     implementation(libs.org.jetbrains.kotlinx.coroutine.core)
@@ -95,12 +95,9 @@ dependencies {
 
 
     //Dagger Hilt
-    implementation(libs.com.google.dagger.hilt.android)
-    implementation(libs.androidx.hilt.navigation.compose) //hiltViewModel
-
-
-    ksp(libs.com.google.dagger.hilt.complier)
-    ksp(libs.androidx.hilt.complier)
+    implementation(libs.com.google.dagger)
+    kapt(libs.com.google.dagger.compiler)
+    kapt(libs.com.google.dagger.proccessor)
 
     //Retrofit2
     implementation(libs.com.squareup.retrofit2)
@@ -122,6 +119,19 @@ dependencies {
     //cardview
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
+    //UnitTesting
+    testImplementation(libs.junit)
+
+    //UI Testing
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+
+
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
 
 
 

@@ -1,25 +1,19 @@
-package com.dotech.walmarthealthcareassignment.app.ui.home
+package com.dotech.walmarthealthcareassignment.app.ui.countries
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dotech.walmarthealthcareassignment.app.network.NetworkConnectionMonitor
 import com.dotech.walmarthealthcareassignment.data.models.RemoteResponse
-import com.dotech.walmarthealthcareassignment.domain.models.ComponentListState
 import com.dotech.walmarthealthcareassignment.domain.models.Country
 import com.dotech.walmarthealthcareassignment.domain.repositories.CountriesRepo
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(
+class CountriesViewModel@Inject constructor(
     private val countriesRepo: CountriesRepo,
-    @ApplicationContext private val context: Context
+//    @ApplicationContext context: Context
 ): ViewModel() {
 
     private val _countries = MutableLiveData<List<Country>>()
@@ -30,8 +24,8 @@ class HomeViewModel @Inject constructor(
 
     private val _error = MutableLiveData<String>()
     val error : LiveData<String> = _error
-    private val _networkStatusLiveData = NetworkConnectionMonitor(context)
-    val networkStatusLiveData = _networkStatusLiveData
+
+
 
 
     init {
@@ -44,7 +38,7 @@ class HomeViewModel @Inject constructor(
     fun fetchAllCountries(){
         viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
-            when(val response = countriesRepo.getAllCountries(context)){
+            when(val response = countriesRepo.getAllCountries()){
                 is RemoteResponse.Success -> {
                     _countries.postValue(response.data)
                     _isLoading.postValue(false)

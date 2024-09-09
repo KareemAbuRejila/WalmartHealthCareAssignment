@@ -17,7 +17,7 @@
         android:theme="@style/Theme.WalmartHealthCareAssignment"
         tools:targetApi="31">
         <activity
-            android:name=".app.ui.home.HomeActivity"
+            android:name=".app.ui.main.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.WalmartHealthCareAssignment">

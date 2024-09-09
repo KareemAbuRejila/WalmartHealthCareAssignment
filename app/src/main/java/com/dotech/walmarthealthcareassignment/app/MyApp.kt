@@ -1,12 +1,30 @@
 package com.dotech.walmarthealthcareassignment.app
 
 import android.app.Application
-import android.content.IntentFilter
-import android.net.ConnectivityManager
-import androidx.lifecycle.LifecycleOwner
-import com.dotech.walmarthealthcareassignment.app.network.NetworkConnectionMonitor
-import dagger.hilt.android.HiltAndroidApp
+import com.dotech.walmarthealthcareassignment.app.di.AppComponent
+import com.dotech.walmarthealthcareassignment.app.di.AppModule
+import com.dotech.walmarthealthcareassignment.app.di.DaggerAppComponent
 
 
-@HiltAndroidApp
-class MyApp : Application()
+class MyApp : Application(){
+    companion object {
+        private lateinit var appComponent: AppComponent
+
+        fun getAppComponent(): AppComponent {
+            return appComponent
+        }
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        initDaggerAppComponent()
+    }
+
+    private fun initDaggerAppComponent(): AppComponent {
+        appComponent =
+            DaggerAppComponent.builder()
+                .appModule(AppModule(this))
+                .build()
+        return appComponent
+    }
+}
