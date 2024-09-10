@@ -1,15 +1,13 @@
-package com.dotech.walmarthealthcareassignment.app.ui.countries
+package com.dotech.walmarthealthcareassignment.presentation.ui.countries
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.dotech.walmarthealthcareassignment.app.MyApp
-import com.dotech.walmarthealthcareassignment.app.common.ViewModelFactory
-import com.dotech.walmarthealthcareassignment.app.ui.adapters.CountriesListAdapter
+import com.dotech.walmarthealthcareassignment.presentation.MyApp
+import com.dotech.walmarthealthcareassignment.presentation.common.ViewModelFactory
+import com.dotech.walmarthealthcareassignment.presentation.ui.adapters.CountriesListAdapter
 import com.dotech.walmarthealthcareassignment.databinding.FragmentCountriesBinding
 import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject

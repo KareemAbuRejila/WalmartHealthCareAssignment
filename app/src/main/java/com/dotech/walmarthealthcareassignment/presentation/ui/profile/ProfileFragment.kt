@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.ui.profile
+package com.dotech.walmarthealthcareassignment.presentation.ui.profile
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -19,7 +19,7 @@ class ProfileFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
+
     }
 
     override fun onCreateView(

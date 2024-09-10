@@ -1,9 +1,9 @@
-package com.dotech.walmarthealthcareassignment.app
+package com.dotech.walmarthealthcareassignment.presentation
 
 import android.app.Application
-import com.dotech.walmarthealthcareassignment.app.di.AppComponent
-import com.dotech.walmarthealthcareassignment.app.di.AppModule
-import com.dotech.walmarthealthcareassignment.app.di.DaggerAppComponent
+import com.dotech.walmarthealthcareassignment.presentation.di.AppComponent
+import com.dotech.walmarthealthcareassignment.presentation.di.AppModule
+import com.dotech.walmarthealthcareassignment.presentation.di.DaggerAppComponent
 
 
 class MyApp : Application(){

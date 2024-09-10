@@ -120,8 +120,16 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    //UnitTesting
+    //Test-UnitTesting
     testImplementation(libs.junit)
+    //Test-Mockito
+    testImplementation(libs.org.mockito.mockito.core)
+    testImplementation(libs.org.mockito.mockito.inline)
+    testImplementation(libs.com.nhaarman.mockitokotlin2)
+    //Test-Coroutine
+    testImplementation(libs.org.jetbrains.kotlinx.coroutine.test)
+    //LiveDAtaAndroidViewModel
+    testImplementation(libs.androidx.arch.core.testing)
 
     //UI Testing
     androidTestImplementation(libs.androidx.junit)

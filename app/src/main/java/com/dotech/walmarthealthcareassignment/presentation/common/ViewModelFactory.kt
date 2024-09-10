@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.common
+package com.dotech.walmarthealthcareassignment.presentation.common
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -6,21 +6,7 @@ import androidx.lifecycle.ViewModelStoreOwner
 import dagger.Lazy
 import javax.inject.Inject
 
-/**
- * A Factory class that reduces the boilerplate to initialize the ViewModel within the Activity or a Fragment.
- * Check for usage examples in this codebase and feel free to copy-paste if it will be necessary.
- *
- * Usage example:
- *
- *    @Inject
- *    lateinit var viewModelFactory: ViewModelFactory<StoreFeedViewModel>
- *
- *    private val viewModel: StoreFeedViewModel by lazy {
- *        viewModelFactory.get<StoreFeedViewModel>(
- *            requireActivity()
- *        )
- *    }
- */
+
 class ViewModelFactory<T: ViewModel>
 @Inject constructor(private val viewModel: Lazy<T>) : ViewModelProvider.Factory {
 

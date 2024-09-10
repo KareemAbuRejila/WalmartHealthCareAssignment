@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.dotech.walmarthealthcareassignment.app.ui.countries.CountriesFragment"
+        android:name="com.dotech.walmarthealthcareassignment.presentation.ui.countries.CountriesFragment"
         android:label="@string/country_list"
         tools:layout="@layout/fragment_countries" />
 
     <fragment
         android:id="@+id/navigation_setting"
-        android:name="com.dotech.walmarthealthcareassignment.app.ui.settings.SettingFragment"
+        android:name="com.dotech.walmarthealthcareassignment.presentation.ui.settings.SettingFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.dotech.walmarthealthcareassignment.app.ui.profile.ProfileFragment"
+        android:name="com.dotech.walmarthealthcareassignment.presentation.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

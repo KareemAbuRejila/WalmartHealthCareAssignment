@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.network
+package com.dotech.walmarthealthcareassignment.presentation.network
 
 import android.content.Context
 import android.net.ConnectivityManager

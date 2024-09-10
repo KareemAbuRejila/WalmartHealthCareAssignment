@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.ui.main
+package com.dotech.walmarthealthcareassignment.presentation.ui.main
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

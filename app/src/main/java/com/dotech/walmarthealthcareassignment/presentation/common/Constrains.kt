@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.common
+package com.dotech.walmarthealthcareassignment.presentation.common
 
 object Constrains {
 

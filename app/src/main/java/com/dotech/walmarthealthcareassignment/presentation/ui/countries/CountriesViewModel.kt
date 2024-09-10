@@ -1,5 +1,6 @@
-package com.dotech.walmarthealthcareassignment.app.ui.countries
+package com.dotech.walmarthealthcareassignment.presentation.ui.countries
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,6 @@ import javax.inject.Inject
 
 class CountriesViewModel@Inject constructor(
     private val countriesRepo: CountriesRepo,
-//    @ApplicationContext context: Context
 ): ViewModel() {
 
     private val _countries = MutableLiveData<List<Country>>()

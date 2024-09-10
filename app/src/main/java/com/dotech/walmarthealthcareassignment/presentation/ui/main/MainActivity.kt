@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.ui.main
+package com.dotech.walmarthealthcareassignment.presentation.ui.main
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -10,8 +10,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dotech.walmarthealthcareassignment.R
-import com.dotech.walmarthealthcareassignment.app.network.NetworkConnectionMonitor
-import com.dotech.walmarthealthcareassignment.app.ui.countries.CountriesFragment
+import com.dotech.walmarthealthcareassignment.presentation.network.NetworkConnectionMonitor
+import com.dotech.walmarthealthcareassignment.presentation.ui.countries.CountriesFragment
 import com.dotech.walmarthealthcareassignment.databinding.ActivityHomeBinding
 
 

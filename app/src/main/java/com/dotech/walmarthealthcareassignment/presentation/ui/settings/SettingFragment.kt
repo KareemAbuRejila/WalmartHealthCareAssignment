@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.ui.settings
+package com.dotech.walmarthealthcareassignment.presentation.ui.settings
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -19,7 +19,7 @@ class SettingFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
+
     }
 
     override fun onCreateView(

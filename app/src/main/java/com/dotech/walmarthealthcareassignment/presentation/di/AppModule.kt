@@ -1,10 +1,9 @@
-package com.dotech.walmarthealthcareassignment.app.di
+package com.dotech.walmarthealthcareassignment.presentation.di
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.dotech.walmarthealthcareassignment.BuildConfig
-import com.dotech.walmarthealthcareassignment.app.MyApp
+import com.dotech.walmarthealthcareassignment.presentation.MyApp
 import com.dotech.walmarthealthcareassignment.data.local.AppDatabase
 import com.dotech.walmarthealthcareassignment.data.local.dao.CountryDao
 import com.dotech.walmarthealthcareassignment.data.local.repositories.CountriesLocalRepo

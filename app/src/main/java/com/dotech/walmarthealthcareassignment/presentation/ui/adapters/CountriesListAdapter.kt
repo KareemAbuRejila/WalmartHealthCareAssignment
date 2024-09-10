@@ -1,11 +1,11 @@
-package com.dotech.walmarthealthcareassignment.app.ui.adapters
+package com.dotech.walmarthealthcareassignment.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.dotech.walmarthealthcareassignment.app.ui.adapters.view_holders.CountryItemViewHolder
+import com.dotech.walmarthealthcareassignment.presentation.ui.adapters.view_holders.CountryItemViewHolder
 import com.dotech.walmarthealthcareassignment.databinding.ItemCountryBinding
 import com.dotech.walmarthealthcareassignment.domain.models.Country
 

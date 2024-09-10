@@ -1,4 +1,4 @@
-package com.dotech.walmarthealthcareassignment.app.ui.adapters.view_holders
+package com.dotech.walmarthealthcareassignment.presentation.ui.adapters.view_holders
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.dotech.walmarthealthcareassignment.databinding.ItemCountryBinding

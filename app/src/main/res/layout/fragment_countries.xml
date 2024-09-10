@@ -15,13 +15,13 @@
 
         <variable
             name="countriesAdapter"
-            type="com.dotech.walmarthealthcareassignment.app.ui.adapters.CountriesListAdapter" />
+            type="com.dotech.walmarthealthcareassignment.presentation.ui.adapters.CountriesListAdapter" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".app.ui.countries.CountriesFragment">
+        tools:context=".presentation.ui.countries.CountriesFragment">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"

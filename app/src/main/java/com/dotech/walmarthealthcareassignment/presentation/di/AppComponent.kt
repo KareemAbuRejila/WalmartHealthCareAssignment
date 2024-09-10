@@ -1,7 +1,7 @@
-package com.dotech.walmarthealthcareassignment.app.di
+package com.dotech.walmarthealthcareassignment.presentation.di
 
-import com.dotech.walmarthealthcareassignment.app.MyApp
-import com.dotech.walmarthealthcareassignment.app.ui.countries.CountriesFragment
+import com.dotech.walmarthealthcareassignment.presentation.MyApp
+import com.dotech.walmarthealthcareassignment.presentation.ui.countries.CountriesFragment
 import dagger.Component
 import javax.inject.Singleton
 

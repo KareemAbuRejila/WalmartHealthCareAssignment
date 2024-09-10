@@ -5,6 +5,7 @@ import com.dotech.walmarthealthcareassignment.data.Utils
 import com.dotech.walmarthealthcareassignment.data.local.repositories.CountriesLocalRepo
 import com.dotech.walmarthealthcareassignment.data.models.RemoteResponse
 import com.dotech.walmarthealthcareassignment.data.remote.apis.CountriesApi
+import com.dotech.walmarthealthcareassignment.data.remote.auth.TokenManager
 import com.dotech.walmarthealthcareassignment.domain.models.Country
 import com.dotech.walmarthealthcareassignment.domain.repositories.CountriesRepo
 import java.net.SocketTimeoutException
@@ -20,7 +21,6 @@ class CountriesRepoImpl @Inject constructor(
             try {
                 // Check if countries are available in the local database
                 countriesLocalRepo.getAll().also {
-//                    if (it.value!=null && it.value!!.isNotEmpty())
                     return if ( it.isNotEmpty())
                         RemoteResponse.Success(it)
                     else
@@ -37,7 +37,9 @@ class CountriesRepoImpl @Inject constructor(
     private suspend fun getFromRemote(context: Context): RemoteResponse<List<Country>> {
         if (Utils.isNetworkAvailable(context = context)) {
             // Fetch countries from API
-            val response = api.getCountries().map { it.toCountry() }
+            val response = api.getCountries(
+                TokenManager().getToken()
+            ).map { it.toCountry() }
             // Cache the countries in the database
             countriesLocalRepo.insertAll(response)
             return RemoteResponse.Success(response)
@@ -45,5 +47,6 @@ class CountriesRepoImpl @Inject constructor(
             return RemoteResponse.Error("Check Internet")
         }
     }
+
 
 }
